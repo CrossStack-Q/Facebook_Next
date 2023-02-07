@@ -11,15 +11,6 @@ import { doc, getDoc } from "firebase/firestore";
 function  Feed() {
 
 
-//   const docRef = doc(db, "posts","Value1");
-//   const docSnap = await getDoc(docRef);
-
-//    if (docSnap.exists()) {
-//     console.log("Document data:", docSnap.data());
-//   } else {
-//   // doc.data() will be undefined in this case
-//      console.log("No such document!");
-// }
 
 
 
@@ -28,8 +19,6 @@ function  Feed() {
   async function cort(){
   const querySnapshot = await getDocs(collection(db, "posts"));
   querySnapshot.forEach((doc) => {
-  // doc.data() is never undefined for query doc snapshots
-  console.log(doc.id, " => ", doc.data());
   });}
 
   cort()

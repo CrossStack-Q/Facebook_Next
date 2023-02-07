@@ -23,7 +23,8 @@ import { collection, onSnapshot, orderBy, query } from 'firebase/firestore'
 import { db } from '../../../firebase'
 
 function Post({ id, username, userImg, img, message }) {
-  const { data: session } = useSession()
+  const { data } = useSession();
+  const [session, setsession] = useState(data);
   const [comment, setComment] = useState('')
   const [comments, setComments] = useState([])
   const [likes, setLikes] = useState([])

@@ -25,7 +25,8 @@ import {
 } from '@nextui-org/react'
 
 function InputBox() {
-  const { data: session } = useSession()
+  const { data } = useSession();
+  const [session, setsession] = useState(data);
   const filePickerRef = useRef(null)
   const inputRef = useRef(null)
   const [open, setOpen] = useState(false)
@@ -82,12 +83,12 @@ function InputBox() {
 
   const Handler = () => {
     setVisible(true)
-    console.log('closed')
+    
   }
 
   const closeHandler = () => {
     setOpen(false), setVisible(false)
-    console.log('closed')
+    
   }
 
   return (
@@ -95,7 +96,7 @@ function InputBox() {
       <div className="flex space-x-4 p-4 items-center">
         <Image
           className="rounded-full"
-          src={session.user.image}
+          src={session?.user?.image}
           width={40}
           height={40}
           layout="fixed"

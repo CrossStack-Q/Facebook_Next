@@ -4,11 +4,13 @@ import Image from 'next/image'
 import Feed from '../components/Feed/Feed'
 import Header from '../components/Header'
 import Login from '../components/Login/Login'
+import Wigdets from '../components/Widgets/Widgets'
 import Sidebar from '../components/Sidebar/Sidebar'
-
 
   export default function Home({session}) {
     if (!session) return <Login />;
+    
+    
   return (
     <div className="">
       <Head>
@@ -26,6 +28,7 @@ import Sidebar from '../components/Sidebar/Sidebar'
         {/* Feed */}
         <Feed />
         {/* Widgets */}
+        <Wigdets/>
       </main>
     </div>
   )
